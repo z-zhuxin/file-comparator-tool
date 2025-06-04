@@ -1,75 +1,71 @@
-# 文件相似度对比工�?
+# 文件相似度对比工具
 
-一个用于计算两个文件内容相似度的Python程序，支持Word、PDF等常见文档格式�?
+一个用于计算两个文档内容相似度的Python程序，支持Word、PDF等常见文档格式。
 
 ## 功能特点
 
-- 计算两个文件内容的相似度百分�?0-100%)
-- 支持多种文档格式�?
+- 计算两个文件内容的相似度百分比(0-100%)
+- 支持多种文档格式：
   - Microsoft Word (.docx)
-  - PDF (.pdf) 
-  - 纯文�?(.txt)
+  - PDF (.pdf)  
+  - 纯文本 (.txt)
 - 高亮显示差异部分
-- 批量处理多个文件�?
+- 批量处理多个文件对比
 - 生成详细对比报告
 
 ## 安装指南
 
-### 依赖安装
-
+1. 安装Python 3.8+
+2. 安装依赖库：
 ```bash
-pip install python-docx PyPDF2 pdfminer.six gensim
+pip install python-docx PyPDF2 difflib
 ```
 
-### 从源码安�?
-
-```bash
-git clone [项目仓库地址]
-cd file-comparison-tool
-pip install -r requirements.txt
+3. 运行程序：
+```bash 
+python compare.py 文件1 文件2
 ```
 
 ## 使用示例
 
-### 命令行使�?
-
-```bash
-python compare.py file1.docx file2.pdf
-```
-
-输出示例�?
-```
-相似�? 78.5%
-差异部分:
-- 文件1: "这是原始文本"
-+ 文件2: "这是修改后的文本"
-```
-
-### Python API
-
 ```python
-from file_comparator import compare_files
+# 基本用法
+from comparator import compare_files
+similarity = compare_files("doc1.docx", "doc2.pdf")
+print(f"相似度: {similarity}%")
 
-similarity = compare_files("file1.docx", "file2.pdf")
-print(f"文件相似�? {similarity:.1f}%")
+# 批量处理
+from comparator import batch_compare
+results = batch_compare("folder1", "folder2")
 ```
 
-## 技术依�?
+## 输出示例
+```
+文档A.docx 与 文档B.pdf 的相似度: 78.5%
+差异部分:
+- 文档A: "这是原始文本"
++ 文档B: "这是修改后的文本"
+```
 
-- **文件解析**:
-  - Word: python-docx
-  - PDF: PyPDF2/pdfminer.six
-- **相似度计�?*:
-  - difflib (基础)
-  - gensim/spacy (高级NLP)
+## 贡献指南
+欢迎提交Pull Request或报告Issue
 
-## 许可�?
+---
 
-MIT License
-## GUI ����ʹ��ָ��
+# File Similarity Comparison Tool
 
-### ����·��
-����λ����ĿĿ¼�µ� dist/gui.exe
+A Python program for calculating content similarity between documents, supporting Word, PDF etc.
 
-### ���ܽ�ͼ
-![GUI�����ͼ](docs/screenshot.png)
+## Features
+
+- Calculate similarity percentage (0-100%)
+- Support multiple formats:
+  - Microsoft Word (.docx)
+  - PDF (.pdf)
+  - Plain text (.txt)  
+- Highlight differences
+- Batch processing
+- Generate detailed reports
+
+## License
+MIT
