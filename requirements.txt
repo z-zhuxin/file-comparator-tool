@@ -1,0 +1,5 @@
+python-docx==0.8.11
+PyPDF2==3.0.1
+pdfminer.six==20221105
+gensim==4.3.1
+numpy==1.24.3
