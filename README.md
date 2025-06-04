@@ -17,9 +17,12 @@
 3. 通过界面选择要比较的文件
 4. 查看相似度结果和差异对比
 
+## 程序界面 
 程序路径：`dist/gui.exe`
+打开就可以直接使用
+![image](https://github.com/user-attachments/assets/d3b694ef-853c-459b-9b4a-e67dc1f0d200)
 
-![GUI界面截图](docs/screenshot.png)
+
 
 ## 功能特点
 
